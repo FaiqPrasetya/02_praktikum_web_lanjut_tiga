@@ -29,6 +29,21 @@ Route::get('/about', function () {
 // Route param
 
 // Route pre-fix
+Route::prefix('shop')->group(function () {
+
+    // Route::controller dapat digunakan
+    // Apabila group route menggunakan controller yg sama
+    // https://laravel.com/docs/8.x/routing#route-group-controllers
+
+    Route::controller(ShopController::class)->group(function () {
+        Route::get('/shop', 'shop')->name('shop');
+        Route::get('/shop-detail', 'shopDetail')->name('shop-detail');
+        Route::get('/cart', 'cart')->name('cart');
+        Route::get('/checkout', 'checkout')->name('checkout');
+        Route::get('/my-account', 'myAccount')->name('my-account');
+        Route::get('/wishlist', 'wishlist')->name('wishlist');
+    });
+});
 
 // Route resource
 
