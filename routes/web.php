@@ -13,6 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route view (di luar materi tapi tetap berguna)
+Route::view('/', 'index')->name('index');
+Route::view('/gallery', 'gallery')->name('gallery');
+
+// Route::get('/', function () {
+//     return view('index');
+// })->name('index');
+
+// Route biasa
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+// Route param
+
+// Route pre-fix
+
+// Route resource
+
