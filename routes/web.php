@@ -27,6 +27,14 @@ Route::get('/about', function () {
 })->name('about');
 
 // Route param
+Route::get('galleries/gallery-{id}', function ($id) {
+    if ($id == 1) {
+        return view('galleries.gallery-1');
+    }
+    else if ($id == 2) {
+        return view('galleries.gallery-2');
+    }
+});
 
 // Route pre-fix
 Route::prefix('shop')->group(function () {
