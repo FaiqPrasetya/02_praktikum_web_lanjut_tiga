@@ -46,4 +46,6 @@ Route::prefix('shop')->group(function () {
 });
 
 // Route resource
-
+Route::resource('/contact-us', ContactController::class)->names([
+    'index' => 'contact-us'
+]);
